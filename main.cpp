@@ -4,6 +4,7 @@
 #include <GL/glut.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
+#include <iostream>
 
 double rot_x = 0;
 double rot_y = 0;
@@ -13,6 +14,7 @@ double superPos[3] = { 1, 0, 0 };
 
 void display();
 void specialKeys(int, int, int);
+void info();
 
 int main(int argc, char ** argv){
 	glutInit(&argc, argv);
@@ -22,6 +24,7 @@ int main(int argc, char ** argv){
 
 	glutDisplayFunc(display);
 	glutSpecialFunc(specialKeys);
+	//	glutIdleFunc(info);
 
 	glutMainLoop();
 
@@ -48,7 +51,15 @@ void display(){
 
 	// Other Transformations
 	// glScalef( 2.0, 2.0, 0.0 );          // Not included
-
+	/*
+	glBegin(GL_POLYGON);
+	glColor3f(1.0/'a',1.0/'d',1.0/'z');
+	glVertex3f(1.0,0,0);
+	glVertex3f(-1.0,0,0);
+	glVertex3f(0,0,1.0);
+	glVertex3f(0,0,-1.0);
+	glEnd();
+	*/
 	//Multi-colored side - FRONT
 	glBegin(GL_POLYGON);
 
@@ -143,3 +154,5 @@ void specialKeys(int key, int x, int y){
 	//std::cout << "x:\t" << rot_x << "  y:\t" << rot_y << std::endl;
 	glutPostRedisplay();
 } 
+
+void info(){}

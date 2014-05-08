@@ -1,6 +1,6 @@
 cc = gcc
 cxx = i586-mingw32msvc-gcc
-libs = -lglut -lGL -lGLU
+libs = -lglut -lGL -lGLU -lstdc++
 flags = 
 file = main.cpp
 
