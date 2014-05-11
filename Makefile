@@ -4,7 +4,7 @@ libs = -lglut -lGL -lGLU -lstdc++
 flags = 
 file = main.cpp
 
-
+debug:
 
 linux:
 	$(cc) -o a.out $(file) $(libs)
