@@ -19,12 +19,12 @@ void info();
 int main(int argc, char ** argv){
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-	glutCreateWindow("Spining cube by bombmask");
+	glutCreateWindow("Spining cube ");
 	glEnable(GL_DEPTH_TEST);
 
 	glutDisplayFunc(display);
 	glutSpecialFunc(specialKeys);
-	//	glutIdleFunc(info);
+	glutIdleFunc(glutPostRedisplay);
 
 	glutMainLoop();
 
@@ -117,7 +117,6 @@ void display(){
 
 	glFlush();
 	glutSwapBuffers();
-	glutPostRedisplay();
 
 	
 }
@@ -152,7 +151,6 @@ void specialKeys(int key, int x, int y){
 	}
 
 	//std::cout << "x:\t" << rot_x << "  y:\t" << rot_y << std::endl;
-	glutPostRedisplay();
 } 
 
 void info(){}
